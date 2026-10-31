@@ -2,6 +2,7 @@ backend:
   name: github
   repo: sahalkhan-1/makki-tour
   branch: main
+  auth_type: implicit
 
 media_folder: "uploads"
 public_folder: "/uploads"
@@ -27,6 +28,9 @@ collections:
           - label: "Tour Videos"
             name: "videos"
             widget: "list"
+            fields:
+              - {label: "Video Title", name: "title", widget: "string"}
+              - {label: "YouTube Video Link", name: "url", widget: "string"}
             fields:
               - {label: "Video Title", name: "title", widget: "string"}
               - {label: "YouTube Video Link", name: "url", widget: "string"}
