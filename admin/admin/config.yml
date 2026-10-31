@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: sahalkhan-1/makki-tour
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site_data"
+    label: "Website Content & Media"
+    files:
+      - file: "content.json"
+        label: "Contact, Media & Pricing"
+        name: "content"
+        fields:
+          - {label: "Calling Phone", name: "phone", widget: "string"}
+          - {label: "WhatsApp Number", name: "whatsapp", widget: "string"}
+          - {label: "Contact Email", name: "email", widget: "string"}
+          - {label: "Office Address", name: "address", widget: "string"}
+          - label: "Gallery Photos"
+            name: "photos"
+            widget: "list"
+            fields:
+              - {label: "Photo Image", name: "image", widget: "image"}
+              - {label: "Caption / Destination", name: "caption", widget: "string"}
+          - label: "Tour Videos"
+            name: "videos"
+            widget: "list"
+            fields:
+              - {label: "Video Title", name: "title", widget: "string"}
+              - {label: "YouTube Video Link", name: "url", widget: "string"}
