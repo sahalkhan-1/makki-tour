@@ -3,6 +3,15 @@
   "whatsapp": "9610181225",
   "email": "makkimadnitourandtravels@gmail.com",
   "address": "Makki Madani Tours And Travels, Anantpura, Kota, Rajasthan",
-  "photos": [],
+  "photos": [
+    {
+      "image": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800",
+      "caption": "Makkah Al-Mukarramah VIP Group"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800",
+      "caption": "Madinah Munawwarah Batch"
+    }
+  ],
   "videos": []
 }
