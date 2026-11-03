@@ -2815,3 +2815,36 @@
   </script>
 </body>
 </html>
+<script>
+  // Automatically pulls updated numbers, prices, and media from content.json
+  fetch('/content.json?v=' + Date.now())
+    .then(res => res.json())
+    .then(data => {
+      // 1. Update Contact Info
+      if (data.phone) {
+        document.querySelectorAll('.contact-phone').forEach(el => el.innerText = data.phone);
+      }
+      if (data.whatsapp) {
+        window.siteWhatsApp = data.whatsapp;
+      }
+      if (data.email) {
+        document.querySelectorAll('.contact-email').forEach(el => el.innerText = data.email);
+      }
+
+      // 2. Update Gallery Photos Dynamically
+      if (data.photos && data.photos.length > 0) {
+        const photoGrid = document.getElementById('galleryPhotoGrid');
+        if (photoGrid) {
+          photoGrid.innerHTML = data.photos.map(p => `
+            <div class="group relative h-48 sm:h-56 rounded-2xl overflow-hidden bg-royal-charcoal border-2 border-gold-300 shadow-md">
+              <img src="${p.image}" alt="${p.caption}" class="w-full h-full object-cover">
+              <div class="absolute bottom-3 inset-x-3 text-left">
+                <span class="font-cinzel text-xs font-bold text-white block">${p.caption}</span>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+    })
+    .catch(err => console.log('Loaded default configuration'));
+</script>
